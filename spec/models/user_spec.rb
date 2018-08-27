@@ -10,4 +10,6 @@ describe User do
 	it { should validate_uniqueness_of(:email).case_insensitive }
 	it { should validate_uniqueness_of(:phone_number).case_insensitive }
 	it { should validate_confirmation_of(:password) }
+
+	it { should validate_length_of(:full_name).is_at_least(6) }
 end

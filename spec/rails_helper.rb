@@ -23,13 +23,9 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
 
-  config.include Devise::Test::ControllerHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, type: :controller
   
-  config.extend ControllerMacros, :type => :controller
-
-  config.before(:each, type: :controller) do
-    include_default_accept_headers
-  end
+  config.extend ControllerMacros, type: :controller
 
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
