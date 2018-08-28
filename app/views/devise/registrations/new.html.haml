@@ -18,6 +18,10 @@
     = f.number_field :phone_number, class: 'form-control'
 
   .form-group
+    = f.label 'Role'
+    = f.select :role_input, User.role_input.options, class: 'form-control'
+
+  .form-group
     = f.label :password
     = f.password_field :password, autocomplete: "new-password", class: 'form-control'
     - if @minimum_password_length

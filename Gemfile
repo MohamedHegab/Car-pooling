@@ -20,6 +20,7 @@ gem 'rolify'
 gem 'rubocop'
 gem 'jquery-rails'
 gem 'toastr-rails'
+gem 'enumerize'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
