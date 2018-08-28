@@ -5,6 +5,8 @@ class Place < ApplicationRecord
   validates :longitude, uniqueness: { scope: :latitude }
 
 	############ Assocciations ############
-  has_many :trips, inverse_of: :source, foreign_key: :source_id
-  has_many :trips, inverse_of: :destination, foreign_key: :destination_id
+  has_many :trips, foreign_key: :source_id
+  has_many :trips, foreign_key: :destination_id
+  has_many :pickups, foreign_key: :source_id
+  has_many :pickups, foreign_key: :destination_id
 end

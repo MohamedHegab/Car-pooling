@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_192818) do
+ActiveRecord::Schema.define(version: 2018_08_28_134858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pickups", force: :cascade do |t|
+    t.integer "passenger_id", null: false
+    t.integer "source_id", null: false
+    t.integer "destination_id", null: false
+    t.datetime "departure_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["passenger_id", "source_id", "destination_id"], name: "index_pickups_on_passenger_id_and_source_id_and_destination_id"
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "name", null: false

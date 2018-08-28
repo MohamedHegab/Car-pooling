@@ -11,6 +11,6 @@ class User < ApplicationRecord
   validates_uniqueness_of :phone_number, :email
 
 	############ Assocciations ############
-	has_many :trips, class_name: 'Trip', foreign_key: :driver_id
-
+  has_many :trips, class_name: 'Trip', foreign_key: :driver_id
+	has_many :pickups, class_name: 'Trip', foreign_key: :passenger_id
 end
