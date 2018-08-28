@@ -18,6 +18,8 @@ gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'cancancan'
 gem 'rolify'
 gem 'rubocop'
+gem 'jquery-rails'
+gem 'toastr-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
