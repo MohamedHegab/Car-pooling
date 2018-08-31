@@ -1,0 +1,15 @@
+$('#new_place_remote').modal('toggle');
+
+toastr.success('New place created succefully!', 'Great')
+
+$('.place_selection').empty();
+
+<% @places.each do |place| %>
+  $('.place-selection').append($('<option value="<%= place.id %>"><%= place.name %></option>'));
+<% end %>
+
+<% if params[:place][:type] == 'source' %>
+	$('#trip_source_id').val("<%= @place.id %>")
+<% else %>
+	$('#trip_destination_id').val("<%= @place.id %>")
+<% end %>

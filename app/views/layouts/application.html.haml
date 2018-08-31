@@ -5,14 +5,18 @@
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Raye7Task
+    %title Raye7 Task
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'layouts/toastr_flash'
-    %div{id: "wrapper"}
+    #wrapper
       = render 'layouts/navigation'
-      %div{id: "page-wrapper"}
-        = yield
+      #page-wrapper
+        .row
+          .col-lg-12
+            %h1.page-header 
+              = yield(:header)
+            = yield

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/home'
   devise_for :users, controllers: { registrations: 'registrations' }
 
   constraints RoleRouteConstraint.new { |user| user.has_role? :driver } do
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
   
   get 'dashboard', to: 'home#home'
 
-
+  resources :trips
+  resources :places
   root to: redirect('/dashboard', status: 302)
 end

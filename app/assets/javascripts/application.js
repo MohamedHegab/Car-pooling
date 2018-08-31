@@ -14,6 +14,8 @@
 //= require jquery
 //= require toastr
 //= require bootstrap/js/bootstrap.min
+//= require js/moment
+//= require js/bootstrap-datetimepicker.min
 //= require activestorage
 //= require turbolinks
 //= require_tree .

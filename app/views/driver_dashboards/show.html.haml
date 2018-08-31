@@ -1,2 +1,15 @@
-%h1 DriverDashboards#show
-%p Find me in app/views/driver_dashboards/show.html.haml
+- content_for :header, "Dashboard"
+.panel.panel-primary
+  .panel-heading Add new Trip
+  .panel-footer
+    = render 'trips/form'
+.panel.panel-primary
+  .panel-heading All your trips
+  .panel-footer
+    - if @trips.present?
+      = render 'trips/index'
+    - else
+      %table
+        %caption There are no trips yet
+
+= render 'driver_dashboards/dialog'

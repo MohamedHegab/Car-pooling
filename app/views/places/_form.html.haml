@@ -1,0 +1,27 @@
+- remote = modal ?  true : false 
+= form_for @place, remote: remote do |f|
+  - if @place.errors.any?
+    #error_explanation
+      %h2 
+        = pluralize(@place.errors.count, "error")
+        prohibited this place from being saved:
+      %ul
+        - @place.errors.full_messages.each do |message|
+          %li
+            = message
+
+  = f.hidden_field :type, value: params[:type]
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+
+  .form-group
+    = f.label :longitude
+    = f.number_field :longitude, class: 'form-control', step: :any
+
+  .form-group
+    = f.label :latitude
+    = f.number_field :latitude, class: 'form-control', step: :any
+
+  .actions
+    = f.submit "Create place", class: 'btn btn-default'

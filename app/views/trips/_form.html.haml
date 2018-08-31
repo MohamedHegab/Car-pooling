@@ -1,0 +1,34 @@
+= form_for(@trip) do |f|
+  - if @trip.errors.any?
+    #error_explanation
+      %h2 
+        = pluralize(@trip.errors.count, "error")
+        prohibited this trip from being saved:
+      %ul
+        - @trip.errors.full_messages.each do |message|
+          %li
+            = message
+  .form-group
+    = f.label :source_id
+    .row
+      .col-lg-10
+        = f.collection_select :source_id, Place.all, :id, :name, {}, class: 'place-selection form-control'
+      .col-lg-2
+        = link_to 'new place', new_place_path(type: 'source'),  {id:"new_source_button" , class: "btn btn-primary", remote: true, 'data-toggle' =>  "modal", 'data-target' => '#new_place_remote'} 
+  .form-group
+    = f.label :destination_id
+    .row
+      .col-lg-10
+        = f.collection_select :destination_id, Place.all, :id, :name, {}, class: 'place-selection form-control'
+      .col-lg-2
+        = link_to 'new place', new_place_path(type: 'destination'),  {id:"new_destination_button" , class: "btn btn-primary", remote: true, 'data-toggle' =>  "modal", 'data-target' => '#new_place_remote'} 
+  .form-group#departure_container
+    = f.label :departure_time
+    = f.datetime_field :departure_time, class: 'form-control datepicker'
+  .form-group
+    = f.label :number_of_seats
+    = f.number_field :number_of_seats, class: 'form-control'
+    %p.help-block At least 3 seats
+
+  .actions
+    = f.submit "Create trip", class: 'btn btn-default'

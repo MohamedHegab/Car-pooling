@@ -1,0 +1,19 @@
+%table
+  %caption Trips you made
+  %thead
+    %tr
+      %th{:scope => "col"} Source
+      %th{:scope => "col"} Destination
+      %th{:scope => "col"} Departure Time
+      %th{:scope => "col"} Number of Seats
+  %tbody
+    - @trips.each do |trip|
+      %tr
+        %td{"data-label" => "Source"}
+          = trip.source.try(:name)
+        %td{"data-label" => "Destination"}
+          = trip.destination.try(:name)
+        %td{"data-label" => "Departure Time"}
+          = trip.departure_time
+        %td{"data-label" => "Number of Seats"}
+          = trip.number_of_seats

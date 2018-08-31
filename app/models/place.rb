@@ -1,4 +1,5 @@
 class Place < ApplicationRecord
+  attr_accessor :type
 	############ validations ############
   validates_presence_of :name, :longitude, :latitude
   validates_uniqueness_of :name
