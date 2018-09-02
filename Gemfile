@@ -45,6 +45,7 @@ group :test do
   gem 'guard-rspec', '4.4.2'
   gem 'shoulda'
   gem 'rubocop-rspec'
+  gem 'rails-controller-testing'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

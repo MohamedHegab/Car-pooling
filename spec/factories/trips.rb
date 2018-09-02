@@ -3,7 +3,7 @@ FactoryBot.define do
     driver
     source { create(:place, longitude: '-73.8454648940358') }
     destination { create(:place, longitude: '-122.078250641083') }
-    departure_time { DateTime.now }
+    departure_time { DateTime.now + 1 }
     number_of_seats { 5 }
   end
 end

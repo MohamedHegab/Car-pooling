@@ -7,4 +7,9 @@ class Trip < ApplicationRecord
 	belongs_to :driver, class_name: 'User'
 	belongs_to :source, class_name: 'Place'
 	belongs_to :destination, class_name: 'Place'
+
+
+	def to_s
+		"Trip from #{self.source} to #{self.destination}"
+	end
 end

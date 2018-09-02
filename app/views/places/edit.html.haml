@@ -1,0 +1,7 @@
+- content_for :header, "Edit #{@place.name}"
+
+= render 'form', modal: false
+
+= link_to 'Show', @place 
+|
+= link_to 'Back', places_path

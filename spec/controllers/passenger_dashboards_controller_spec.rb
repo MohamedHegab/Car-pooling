@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe PassengerDashboardsController, type: :controller do
 
+	login_passenger
+	
   describe "GET #show" do
     it "returns http success" do
       get :show

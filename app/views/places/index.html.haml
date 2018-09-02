@@ -1,0 +1,21 @@
+- content_for :header, "All Places"
+%table
+  %thead
+    %tr
+      %th{:scope => "col"} Name
+      %th{:scope => "col"} Longitude
+      %th{:scope => "col"} Latitude
+      %th{:scope => "col"} Actions
+  %tbody
+    - @places.each do |place|
+      %tr
+        %td{"data-label" => "Name"}
+          = place.name
+        %td{"data-label" => "Longitude"}
+          = place.longitude
+        %td{"data-label" => "Latitude"}
+          = place.latitude
+        %td{"data-label" => "Actions"}
+          = link_to 'Edit', edit_place_path(place)
+          |
+          = link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' }

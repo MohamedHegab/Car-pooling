@@ -6,6 +6,7 @@
       %th{:scope => "col"} Destination
       %th{:scope => "col"} Departure Time
       %th{:scope => "col"} Number of Seats
+      %th{:scope => "col"} Action
   %tbody
     - @trips.each do |trip|
       %tr
@@ -17,3 +18,5 @@
           = trip.departure_time
         %td{"data-label" => "Number of Seats"}
           = trip.number_of_seats
+        %td{"data-label" => "Action"}
+          = link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' }
