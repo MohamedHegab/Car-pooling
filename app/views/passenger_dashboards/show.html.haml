@@ -1,2 +1,15 @@
-%h1 PassengerDashboards#show
-%p Find me in app/views/passenger_dashboards/show.html.haml
+- content_for :header, "Dashboard"
+.panel.panel-primary
+  .panel-heading Add new Pickup
+  .panel-footer
+    = render 'pickups/form'
+.panel.panel-primary
+  .panel-heading All your pickups
+  .panel-footer
+    - if @pickups.present?
+      = render 'pickups/index'
+    - else
+      %table
+        %caption There are no pickups yet
+
+= render 'passenger_dashboards/dialog'

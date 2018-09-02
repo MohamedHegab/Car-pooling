@@ -1,0 +1,19 @@
+%table
+  %caption Pickups you made
+  %thead
+    %tr
+      %th{:scope => "col"} Source
+      %th{:scope => "col"} Destination
+      %th{:scope => "col"} Departure Time
+      %th{:scope => "col"} Action
+  %tbody
+    - @pickups.each do |pickup|
+      %tr
+        %td{"data-label" => "Source"}
+          = pickup.source.try(:name)
+        %td{"data-label" => "Destination"}
+          = pickup.destination.try(:name)
+        %td{"data-label" => "Departure Time"}
+          = pickup.departure_time
+        %td{"data-label" => "Action"}
+          = link_to 'Destroy', pickup, method: :delete, data: { confirm: 'Are you sure?' }

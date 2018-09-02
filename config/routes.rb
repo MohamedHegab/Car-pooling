@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
     resources :trips
     resources :places
+    resources :pickups
     root to: redirect('/dashboard', status: 302)
   end
 end
