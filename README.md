@@ -1,4 +1,4 @@
-# Raye7 task
+# Car pooling App
 
 Project to make trips and pickups for passengers and drivers to meet each other
 
