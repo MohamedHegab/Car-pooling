@@ -39,6 +39,11 @@ $(document).ready(function() {
             row.setAttribute( 'id', data.id );       
         },
         "processing": true,
-        "serverSide": true
+        "serverSide": true,
+        aLengthMenu: [
+            [25, 50, -1],
+            [25, 50, "All"]
+        ],
+        iDisplayLength: -1
     });
 });

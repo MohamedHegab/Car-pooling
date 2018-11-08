@@ -51,7 +51,8 @@ class PlacesController < ApplicationController
 
   def get_places
     @draw = params[:draw]
-    @places = Place.all.limit(params[:length]).offset(params[:start].to_i)
+    limit = params[:length].to_i > 0 ? params[:length].to_i : nil
+    @places = Place.all.limit(limit).offset(params[:start].to_i)
   end
 
   private
