@@ -1,6 +1,7 @@
 class PlacesController < ApplicationController
-  load_and_authorize_resource
+  # load_and_authorize_resource
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   def index
     @places = Place.all
@@ -46,6 +47,11 @@ class PlacesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to places_url, notice: "place destroyed" }
     end
+  end
+
+  def get_places
+    @draw = params[:draw]
+    @places = Place.all.limit(params[:length]).offset(params[:start].to_i)
   end
 
   private

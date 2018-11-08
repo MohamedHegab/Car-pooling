@@ -13,7 +13,12 @@ Rails.application.routes.draw do
     get 'dashboard', to: 'home#home'
 
     resources :trips
-    resources :places
+    resources :places do
+      collection do 
+        post :get_places
+      end
+    end
+    
     resources :pickups
     root to: redirect('/dashboard', status: 302)
   end

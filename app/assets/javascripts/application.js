@@ -16,6 +16,7 @@
 //= require bootstrap/js/bootstrap.min
 //= require js/moment
 //= require js/bootstrap-datetimepicker.min
+//= require datatable/datatables.min
 //= require activestorage
 //= require turbolinks
 //= require_tree .
